@@ -1,0 +1,70 @@
+// 0 = none, 1 = warning, 2 = error
+module.exports = {
+  extends: ['eslint:recommended', 'prettier', 'plugin:vue/essential'],
+  plugins: ['prettier'],
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+    },
+  },
+  env: {
+    es6: true,
+    browser: true,
+    node: true,
+    commonjs: true,
+    jquery: true,
+    mocha: true,
+    jasmine: true,
+  },
+  globals: {
+    define: true,
+    alert: true,
+    confirm: true,
+    console: true,
+    // Tests
+    describe: true,
+    expect: true,
+  },
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'es5',
+        bracketSpacing: true,
+        semi: false,
+        jsxBracketSameLine: true,
+      },
+    ],
+    'no-var': ['error'],
+    'prefer-const': ['error'],
+    eqeqeq: [2, 'allow-null'],
+    'max-len': [2, 120],
+    complexity: [1, 10],
+    'max-depth': [1, 4],
+    'max-nested-callbacks': [2, 4],
+    'max-params': [2, 3],
+    strict: 0,
+    'import/no-named-as-default': 0,
+    'import/namespace': 0,
+    'import/default': 0,
+    'import/no-named-as-default-member': 0,
+    'no-console': 1, // 0 Disable, 1 Warning, 2 Error
+    'no-spaced-func': 1,
+    'keyword-spacing': [2, { before: true, after: true, overrides: {} }],
+    'space-before-blocks': 2,
+    'quote-props': [2, 'as-needed'],
+    'one-var': [2, 'never'],
+    'dot-notation': 2,
+    'no-else-return': 2,
+    'no-multiple-empty-lines': 2,
+    'no-multi-spaces': 2,
+    curly: 2,
+    'semi-spacing': 2,
+    'no-unused-vars': 2,
+    'no-undef': 2,
+    quotes: [2, 'single', 'avoid-escape'], // Disabled quotes due to old files
+  },
+}
